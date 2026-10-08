@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>To-Do List Life Dashboard</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-theme="light">
+
+  <header class="site-header">
+    <div class="greeting-panel">
+      <div class="greeting-time-date">
+        <span id="clock-display" class="clock-display"></span>
+        <span id="date-display" class="date-display"></span>
+      </div>
+      <div id="greeting-display" class="greeting-display"></div>
+      <form class="name-form" id="name-form" autocomplete="off">
+        <input
+          type="text"
+          id="name-input"
+          class="name-input"
+          placeholder="Enter your name…"
+          maxlength="40"
+          aria-label="Your name"
+        />
+        <button type="submit" class="btn btn--small">Save</button>
+      </form>
+    </div>
+
+    <button
+      class="theme-toggle"
+      id="theme-toggle"
+      aria-label="Toggle dark mode"
+      title="Toggle light / dark mode"
+    >
+      <span id="theme-icon">&#9728;&#65039;</span>
+    </button>
+  </header>
+
+  <main class="dashboard-grid">
+
+    <!-- Focus Timer Card -->
+    <section class="card card--timer" aria-label="Focus Timer">
+      <h2 class="card-title">Focus Timer</h2>
+      <div class="timer-display" id="timer-display">25:00</div>
+      <div class="timer-controls">
+        <button class="btn btn--primary" id="timer-start">Start</button>
+        <button class="btn btn--secondary" id="timer-stop">Stop</button>
+        <button class="btn btn--ghost" id="timer-reset">Reset</button>
+      </div>
+    </section>
+
+    <!-- To-Do List Card -->
+    <section class="card card--todo" aria-label="To-Do List">
+      <h2 class="card-title">Tasks</h2>
+      <form class="todo-form" id="todo-form" autocomplete="off">
+        <input
+          type="text"
+          id="todo-input"
+          class="text-input"
+          placeholder="Add a task…"
+          aria-label="New task title"
+          maxlength="120"
+        />
+        <button type="submit" class="btn btn--primary">Add</button>
+      </form>
+      <p class="error-msg" id="todo-error" role="alert" aria-live="polite"></p>
+      <ul class="task-list" id="task-list" aria-label="Task list"></ul>
+    </section>
+
+    <!-- Quick Links Card -->
+    <section class="card card--links" aria-label="Quick Links">
+      <h2 class="card-title">Quick Links</h2>
+      <form class="links-form" id="links-form" autocomplete="off">
+        <input
+          type="text"
+          id="link-name-input"
+          class="text-input"
+          placeholder="Site name"
+          aria-label="Website name"
+          maxlength="40"
+        />
+        <input
+          type="url"
+          id="link-url-input"
+          class="text-input"
+          placeholder="https://…"
+          aria-label="Website URL"
+          maxlength="500"
+        />
+        <button type="submit" class="btn btn--primary">Add</button>
+      </form>
+      <p class="error-msg" id="links-error" role="alert" aria-live="polite"></p>
+      <div class="links-grid" id="links-grid" aria-label="Saved links"></div>
+    </section>
+
+  </main>
+
+  <script src="js/script.js" defer></script>
+</body>
+</html>
